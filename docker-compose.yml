@@ -92,11 +92,13 @@ services:
 
   rmq:
     image: rabbitmq:3-management
-    environment:
-      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
-      RABBITMQ_DEFAULT_USER: "guest"
-      RABBITMQ_DEFAULT_PASS: "guest"
-      RABBITMQ_DEFAULT_VHOST: "/"
+    volumes:
+      - "./etc/dev/rabbitmq/rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf"
+#    environment:
+#      RABBITMQ_ERLANG_COOKIE: "SWQOKODSQALRPCLNMEQG"
+#      RABBITMQ_DEFAULT_USER: "guest"
+#      RABBITMQ_DEFAULT_PASS: "guest"
+#      RABBITMQ_DEFAULT_VHOST: "/"
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:7.11.0

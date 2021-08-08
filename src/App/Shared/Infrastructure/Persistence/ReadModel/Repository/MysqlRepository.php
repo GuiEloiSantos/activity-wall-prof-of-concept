@@ -21,7 +21,6 @@ abstract class MysqlRepository
     public function __construct(EntityManagerInterface $entityManager)
     {
         $this->entityManager = $entityManager;
-        $this->setEntityManager();
     }
 
     /**
@@ -41,7 +40,6 @@ abstract class MysqlRepository
      *
      * If you know how to solve this let me know please and I'll owe you a beer
      */
-    abstract protected function setEntityManager(): void;
 
     /**
      * @param mixed $model
