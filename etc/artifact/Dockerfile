@@ -56,7 +56,7 @@ WORKDIR /app
 
 COPY --from=builder /app /app
 
-FROM nginx:1.17-alpine as nginx
+FROM nginx:1.24-alpine as nginx
 
 ENV APP_ENV prod
 
